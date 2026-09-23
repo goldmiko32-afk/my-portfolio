@@ -4,31 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Уразбек Мейырхан | Portfolio</title>
+    <title>Уразбек Мейырхан — Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <div class="logo">UM.</div>
+<header class="header">
 
-    <nav>
+    <div class="logo">УМ<span>.</span></div>
+
+    <button class="menu-btn" id="menuBtn">
+        ☰
+    </button>
+
+    <nav class="nav" id="nav">
         <a href="#about">Обо мне</a>
         <a href="#interests">Интересы</a>
         <a href="#projects">Проекты</a>
         <a href="#skills">Навыки</a>
         <a href="#contact">Контакты</a>
     </nav>
+
 </header>
 
 
+<main>
+
+<!-- HERO -->
+
 <section class="hero">
 
-    <div class="hero-content">
+    <div class="hero-bg"></div>
 
-        <span class="small-title">MY PORTFOLIO</span>
+    <div class="hero-content reveal">
+
+        <div class="hero-label">
+            MY PORTFOLIO
+        </div>
 
         <h1>
             Привет! Я<br>
@@ -36,19 +50,20 @@
         </h1>
 
         <p>
-            Изучаю английский, программирование,
-            искусственный интеллект и постоянно
-            открываю для себя что-то новое.
+            Изучаю программирование, искусственный интеллект,
+            английский язык и постоянно развиваюсь.
         </p>
 
         <div class="hero-buttons">
-            <a href="#interests" class="main-btn">
+
+            <a href="#interests" class="btn primary">
                 Мои интересы
             </a>
 
-            <a href="#about" class="second-btn">
-                Узнать обо мне
+            <a href="#projects" class="btn secondary">
+                Мои проекты
             </a>
+
         </div>
 
     </div>
@@ -56,11 +71,13 @@
 </section>
 
 
-<section id="about" class="section">
+<!-- ABOUT -->
+
+<section class="section reveal" id="about">
 
     <div class="section-title">
         <span>01</span>
-        <h2>Кто я?</h2>
+        <h2>Обо мне</h2>
     </div>
 
     <div class="about-box">
@@ -71,28 +88,16 @@
 
         <div>
 
-            <h3>Уразбек Мейырхан</h3>
+            <h3>Немного обо мне</h3>
 
             <p>
-                Я человек, которому интересно развиваться,
-                получать новые знания и пробовать разные
-                направления.
+                Меня зовут Уразбек Мейырхан.
+                Мне интересно развиваться, получать новые знания
+                и пробовать разные направления.
             </p>
 
-            <p>
-                Мне интересны английский язык,
-                программирование, искусственный интеллект
-                и книги.
-            </p>
-
-            <p>
-                Я стараюсь превращать свои интересы
-                в реальные навыки и проекты.
-            </p>
-
-            <button class="small-btn"
-                    onclick="openModal('about')">
-                Подробнее →
+            <button class="small-btn" onclick="openModal('about')">
+                Узнать больше →
             </button>
 
         </div>
@@ -102,7 +107,9 @@
 </section>
 
 
-<section id="interests" class="section">
+<!-- INTERESTS -->
+
+<section class="section reveal" id="interests">
 
     <div class="section-title">
         <span>02</span>
@@ -110,109 +117,163 @@
     </div>
 
     <p class="section-description">
-        Нажми на карточку, чтобы открыть слайд-шоу.
+        То, что мне интересно и чем я занимаюсь.
     </p>
+
 
     <div class="interest-grid">
 
-        <div class="interest-card"
-             onclick="openModal('english')">
+        <article class="interest-card" onclick="openModal('english')">
 
-            <img src="images/english.jpg"
-                 alt="English">
+            <img src="images/english.jpg" alt="English">
 
-            <div class="card-overlay">
+            <div class="card-overlay"></div>
+
+            <div class="card-content">
+
                 <span>01</span>
+
                 <h3>English</h3>
-                <p>Язык и новые знания</p>
+
+                <p>Уровень B1</p>
+
             </div>
 
-        </div>
+        </article>
 
 
-        <div class="interest-card"
-             onclick="openModal('programming')">
+        <article class="interest-card" onclick="openModal('programming')">
 
-            <img src="images/programming.jpg"
-                 alt="Programming">
+            <img src="images/programming.jpg" alt="Programming">
 
-            <div class="card-overlay">
+            <div class="card-overlay"></div>
+
+            <div class="card-content">
+
                 <span>02</span>
+
                 <h3>Programming</h3>
-                <p>Создание сайтов и проектов</p>
+
+                <p>Сайты и ИИ</p>
+
             </div>
 
-        </div>
+        </article>
 
 
-        <div class="interest-card"
-             onclick="openModal('ai')">
+        <article class="interest-card" onclick="openModal('ai')">
 
-            <img src="images/ai.jpg"
-                 alt="AI">
+            <img src="images/ai.jpg" alt="Artificial Intelligence">
 
-            <div class="card-overlay">
+            <div class="card-overlay"></div>
+
+            <div class="card-content">
+
                 <span>03</span>
-                <h3>Artificial Intelligence</h3>
-                <p>Современные технологии</p>
+
+                <h3>AI</h3>
+
+                <p>Новые технологии</p>
+
             </div>
 
-        </div>
+        </article>
 
 
-        <div class="interest-card"
-             onclick="openModal('books')">
+        <article class="interest-card" onclick="openModal('books')">
 
-            <img src="images/book.jpg"
-                 alt="Books">
+            <img src="images/book.jpg" alt="Books">
 
-            <div class="card-overlay">
+            <div class="card-overlay"></div>
+
+            <div class="card-content">
+
                 <span>04</span>
+
                 <h3>Books</h3>
+
                 <p>Знания и интерес</p>
+
             </div>
 
-        </div>
+        </article>
 
     </div>
 
 </section>
 
 
-<section id="projects" class="section">
+<!-- PROJECTS -->
+
+<section class="section reveal" id="projects">
 
     <div class="section-title">
         <span>03</span>
-        <h2>Мои проекты</h2>
+        <h2>Проекты</h2>
     </div>
+
 
     <div class="project-grid">
 
         <div class="project-card">
-            <span>01</span>
+
+            <div class="project-number">01</div>
+
+            <div class="project-icon">🌐</div>
+
             <h3>Portfolio Website</h3>
+
             <p>
-                Персональный сайт, который я создаю
-                как практику в программировании.
+                Мой личный сайт-портфолио,
+                созданный с помощью HTML, CSS и JavaScript.
             </p>
+
+            <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JS</span>
+            </div>
+
         </div>
 
+
         <div class="project-card">
-            <span>02</span>
+
+            <div class="project-number">02</div>
+
+            <div class="project-icon">🤖</div>
+
             <h3>ИИ-помощник</h3>
+
             <p>
-                Проект, связанный с искусственным
-                интеллектом.
+                Один из моих проектов, связанный
+                с искусственным интеллектом.
             </p>
+
+            <div class="project-tags">
+                <span>AI</span>
+                <span>JavaScript</span>
+            </div>
+
         </div>
 
+
         <div class="project-card">
-            <span>03</span>
+
+            <div class="project-number">03</div>
+
+            <div class="project-icon">🚀</div>
+
             <h3>Следующий проект</h3>
+
             <p>
-                Новая идея, которую я хочу реализовать
-                в будущем.
+                Новая идея, которую я ещё только собираюсь создать.
             </p>
+
+            <div class="project-tags">
+                <span>Coming soon</span>
+            </div>
+
         </div>
 
     </div>
@@ -220,24 +281,27 @@
 </section>
 
 
-<section id="skills" class="section">
+<!-- SKILLS -->
+
+<section class="section reveal" id="skills">
 
     <div class="section-title">
         <span>04</span>
         <h2>Навыки</h2>
     </div>
 
-    <div class="skills">
+
+    <div class="skills-box">
 
         <div class="skill">
 
-            <div class="skill-top">
+            <div class="skill-info">
                 <span>English</span>
-                <span>B1</span>
+                <strong>B1</strong>
             </div>
 
             <div class="skill-line">
-                <div style="width: 60%;"></div>
+                <div style="width:55%"></div>
             </div>
 
         </div>
@@ -245,13 +309,13 @@
 
         <div class="skill">
 
-            <div class="skill-top">
+            <div class="skill-info">
                 <span>HTML / CSS</span>
-                <span>Развиваю</span>
+                <strong>Развиваю</strong>
             </div>
 
             <div class="skill-line">
-                <div style="width: 65%;"></div>
+                <div style="width:65%"></div>
             </div>
 
         </div>
@@ -259,13 +323,13 @@
 
         <div class="skill">
 
-            <div class="skill-top">
+            <div class="skill-info">
                 <span>JavaScript</span>
-                <span>Изучаю</span>
+                <strong>Изучаю</strong>
             </div>
 
             <div class="skill-line">
-                <div style="width: 40%;"></div>
+                <div style="width:45%"></div>
             </div>
 
         </div>
@@ -273,13 +337,13 @@
 
         <div class="skill">
 
-            <div class="skill-top">
+            <div class="skill-info">
                 <span>AI</span>
-                <span>Интересуюсь</span>
+                <strong>Интересуюсь</strong>
             </div>
 
             <div class="skill-line">
-                <div style="width: 70%;"></div>
+                <div style="width:70%"></div>
             </div>
 
         </div>
@@ -289,52 +353,43 @@
 </section>
 
 
-<section class="section">
+<!-- CHATGPT -->
+
+<section class="section reveal">
 
     <div class="section-title">
         <span>05</span>
         <h2>Мнение ChatGPT</h2>
     </div>
 
+
     <div class="chatgpt-card">
 
-        <div class="chatgpt-icon">
-            🤖
+        <div class="ai-orb">
+            ✦
         </div>
 
         <div>
 
-            <div class="chatgpt-label">
-                CHATGPT
-            </div>
-
-            <h3>
-                Уразбек Мейырхан
-            </h3>
+            <h3>Как я тебя вижу</h3>
 
             <p>
-                Уразбек — человек, которому интересно
-                развиваться, получать новые знания
-                и пробовать разные направления.
-            </p>
-
-            <p>
+                Уразбек — человек, которому интересно развиваться,
+                получать новые знания и пробовать разные направления.
                 Его интересы связаны с английским языком,
-                программированием, искусственным интеллектом
-                и книгами.
-            </p>
-
-            <p>
+                программированием, искусственным интеллектом и книгами.
                 Он уже создал ИИ-помощника и два сайта,
                 продолжает изучать программирование
                 и интересуется новыми технологиями.
             </p>
 
-            <div class="tags">
+            <div class="chat-tags">
+
                 <span>English</span>
                 <span>Programming</span>
                 <span>AI</span>
                 <span>Books</span>
+
             </div>
 
         </div>
@@ -344,9 +399,9 @@
 </section>
 
 
-<!-- КОНТАКТЫ -->
+<!-- CONTACT -->
 
-<section id="contact" class="section contact">
+<section class="section reveal" id="contact">
 
     <div class="section-title">
         <span>06</span>
@@ -354,16 +409,16 @@
     </div>
 
     <p class="contact-description">
-        Найти меня можно здесь.
+        Можно найти меня здесь:
     </p>
+
 
     <div class="contact-grid">
 
         <a
+            class="contact-card"
             href="https://www.tiktok.com/@meirkhaannn"
             target="_blank"
-            rel="noopener noreferrer"
-            class="contact-card"
         >
 
             <div class="contact-icon">
@@ -379,10 +434,9 @@
 
 
         <a
+            class="contact-card"
             href="https://www.instagram.com/meirkhaaannn/"
             target="_blank"
-            rel="noopener noreferrer"
-            class="contact-card"
         >
 
             <div class="contact-icon">
@@ -414,30 +468,24 @@
 
 </section>
 
-
-<footer>
-    <p>© 2026 Уразбек Мейырхан</p>
-</footer>
+</main>
 
 
-<!-- МОДАЛЬНОЕ ОКНО -->
+<!-- MODAL -->
 
 <div class="modal" id="infoModal">
 
     <div class="modal-content">
 
-        <button class="close"
-                onclick="closeModal()">
+        <button class="close" onclick="closeModal()">
             ×
         </button>
 
-        <div class="modal-number"
-             id="slideNumber">
+        <div class="modal-number" id="slideNumber">
             01 / 04
         </div>
 
-        <div class="modal-icon"
-             id="modalIcon">
+        <div class="modal-icon" id="modalIcon">
             ✨
         </div>
 
@@ -455,9 +503,7 @@
                 ←
             </button>
 
-            <div class="slide-dots"
-                 id="slideDots">
-            </div>
+            <div class="slide-dots" id="slideDots"></div>
 
             <button onclick="nextSlide()">
                 →
@@ -468,6 +514,13 @@
     </div>
 
 </div>
+
+
+<footer>
+
+    © 2026 Уразбек Мейырхан
+
+</footer>
 
 
 <script src="script.js"></script>

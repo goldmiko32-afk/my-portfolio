@@ -1,14 +1,7 @@
-// ========================================
-// ДАННЫЕ СЛАЙДОВ
-// ========================================
-
 const slides = {
 
-    // ==============================
-    // ENGLISH
-    // ==============================
-
     english: [
+
         {
             icon: "🇺🇸",
             title: "Мой английский",
@@ -32,14 +25,12 @@ const slides = {
             title: "Интересный факт",
             text: "Английский язык вобрал в себя большое количество слов из других языков. Поэтому многие английские слова имеют разное происхождение."
         }
+
     ],
 
 
-    // ==============================
-    // PROGRAMMING
-    // ==============================
-
     programming: [
+
         {
             icon: "💻",
             title: "Программирование",
@@ -63,14 +54,12 @@ const slides = {
             title: "Интересный факт",
             text: "Первый веб-сайт появился в 1991 году. Его создал Тим Бернерс-Ли, один из создателей Всемирной паутины."
         }
+
     ],
 
 
-    // ==============================
-    // AI
-    // ==============================
-
     ai: [
+
         {
             icon: "🤖",
             title: "Почему мне интересен ИИ",
@@ -100,14 +89,12 @@ const slides = {
             title: "Интересный факт",
             text: "Современные ИИ могут работать не только с текстом, но и с изображениями, аудио, видео и программным кодом."
         }
+
     ],
 
 
-    // ==============================
-    // BOOKS
-    // ==============================
-
     books: [
+
         {
             icon: "📚",
             title: "Почему я читаю",
@@ -137,14 +124,12 @@ const slides = {
             title: "Интересный факт",
             text: "«Самый богатый человек в Вавилоне» построен на историях и притчах, через которые автор объясняет идеи о деньгах и финансовых привычках."
         }
+
     ],
 
 
-    // ==============================
-    // ABOUT
-    // ==============================
-
     about: [
+
         {
             icon: "👤",
             title: "Кто я?",
@@ -168,27 +153,21 @@ const slides = {
             title: "Мой подход",
             text: "Мне интересно не просто узнавать информацию, а пробовать применять новые знания на практике."
         }
+
     ]
+
 };
 
-
-// ========================================
-// ТЕКУЩИЙ СЛАЙД
-// ========================================
 
 let currentCategory = "";
 let currentSlide = 0;
 
 
-// ========================================
-// ОТКРЫТИЕ
-// ========================================
+/* MODAL */
 
 function openModal(category) {
 
-    if (!slides[category]) {
-        return;
-    }
+    if (!slides[category]) return;
 
     currentCategory = category;
     currentSlide = 0;
@@ -203,10 +182,6 @@ function openModal(category) {
 }
 
 
-// ========================================
-// ЗАКРЫТИЕ
-// ========================================
-
 function closeModal() {
 
     const modal = document.getElementById("infoModal");
@@ -214,20 +189,18 @@ function closeModal() {
     modal.classList.remove("active");
 
     document.body.style.overflow = "";
+
 }
 
 
-// ========================================
-// ОБНОВЛЕНИЕ СЛАЙДА
-// ========================================
+/* SLIDES */
 
 function updateSlide() {
 
-    const data = slides[currentCategory][currentSlide];
+    const data =
+        slides[currentCategory][currentSlide];
 
-    if (!data) {
-        return;
-    }
+    if (!data) return;
 
     document.getElementById("modalIcon").textContent =
         data.icon;
@@ -239,18 +212,14 @@ function updateSlide() {
         data.text;
 
     document.getElementById("slideNumber").textContent =
-        String(currentSlide + 1).padStart(2, "0") +
-        " / " +
+        String(currentSlide + 1).padStart(2, "0")
+        + " / "
+        +
         String(slides[currentCategory].length).padStart(2, "0");
-
 
     createDots();
 }
 
-
-// ========================================
-// ТОЧКИ СЛАЙДОВ
-// ========================================
 
 function createDots() {
 
@@ -260,7 +229,7 @@ function createDots() {
     dotsContainer.innerHTML = "";
 
     slides[currentCategory].forEach(
-        function (_, index) {
+        function(_, index) {
 
             const dot =
                 document.createElement("span");
@@ -272,20 +241,15 @@ function createDots() {
             }
 
             dotsContainer.appendChild(dot);
+
         }
     );
 }
 
 
-// ========================================
-// СЛЕДУЮЩИЙ СЛАЙД
-// ========================================
-
 function nextSlide() {
 
-    if (!slides[currentCategory]) {
-        return;
-    }
+    if (!slides[currentCategory]) return;
 
     currentSlide++;
 
@@ -300,20 +264,13 @@ function nextSlide() {
 }
 
 
-// ========================================
-// ПРЕДЫДУЩИЙ СЛАЙД
-// ========================================
-
 function previousSlide() {
 
-    if (!slides[currentCategory]) {
-        return;
-    }
+    if (!slides[currentCategory]) return;
 
     currentSlide--;
 
     if (currentSlide < 0) {
-
         currentSlide =
             slides[currentCategory].length - 1;
     }
@@ -322,49 +279,102 @@ function previousSlide() {
 }
 
 
-// ========================================
-// КЛИК ВНЕ ОКНА
-// ========================================
+/* MODAL CLOSE */
 
-window.addEventListener(
-    "click",
-    function (event) {
+window.addEventListener("click", function(event) {
 
-        const modal =
-            document.getElementById("infoModal");
+    const modal =
+        document.getElementById("infoModal");
 
-        if (event.target === modal) {
-            closeModal();
-        }
+    if (event.target === modal) {
+        closeModal();
+    }
+
+});
+
+
+document.addEventListener("keydown", function(event) {
+
+    const modal =
+        document.getElementById("infoModal");
+
+    if (!modal.classList.contains("active")) return;
+
+    if (event.key === "Escape") {
+        closeModal();
+    }
+
+    if (event.key === "ArrowRight") {
+        nextSlide();
+    }
+
+    if (event.key === "ArrowLeft") {
+        previousSlide();
+    }
+
+});
+
+
+/* MOBILE MENU */
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const nav =
+    document.getElementById("nav");
+
+
+menuBtn.addEventListener("click", function() {
+
+    nav.classList.toggle("active");
+
+});
+
+
+/* CLOSE MENU AFTER CLICK */
+
+document.querySelectorAll(".nav a").forEach(
+    function(link) {
+
+        link.addEventListener("click", function() {
+
+            nav.classList.remove("active");
+
+        });
+
     }
 );
 
 
-// ========================================
-// КЛАВИАТУРА
-// ========================================
+/* REVEAL ON SCROLL */
 
-document.addEventListener(
-    "keydown",
-    function (event) {
+const revealElements =
+    document.querySelectorAll(".reveal");
 
-        const modal =
-            document.getElementById("infoModal");
 
-        if (!modal.classList.contains("active")) {
-            return;
+const revealObserver =
+    new IntersectionObserver(
+        function(entries) {
+
+            entries.forEach(function(entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
         }
+    );
 
-        if (event.key === "Escape") {
-            closeModal();
-        }
 
-        if (event.key === "ArrowRight") {
-            nextSlide();
-        }
+revealElements.forEach(function(element) {
 
-        if (event.key === "ArrowLeft") {
-            previousSlide();
-        }
-    }
-);
+    revealObserver.observe(element);
+
+});
