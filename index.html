@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Уразбек Мейырхан | Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">UM.</div>
+
+    <nav>
+        <a href="#about">Обо мне</a>
+        <a href="#interests">Интересы</a>
+        <a href="#projects">Проекты</a>
+        <a href="#skills">Навыки</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="small-title">MY PORTFOLIO</span>
+
+        <h1>
+            Привет! Я<br>
+            <span>Уразбек Мейырхан</span> 👋
+        </h1>
+
+        <p>
+            Изучаю английский, программирование,
+            искусственный интеллект и постоянно
+            открываю для себя что-то новое.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#interests" class="main-btn">
+                Мои интересы
+            </a>
+
+            <a href="#about" class="second-btn">
+                Узнать обо мне
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="about" class="section">
+
+    <div class="section-title">
+        <span>01</span>
+        <h2>Кто я?</h2>
+    </div>
+
+    <div class="about-box">
+
+        <div class="about-icon">
+            👤
+        </div>
+
+        <div>
+
+            <h3>Уразбек Мейырхан</h3>
+
+            <p>
+                Я человек, которому интересно развиваться,
+                получать новые знания и пробовать разные
+                направления.
+            </p>
+
+            <p>
+                Мне интересны английский язык,
+                программирование, искусственный интеллект
+                и книги.
+            </p>
+
+            <p>
+                Я стараюсь превращать свои интересы
+                в реальные навыки и проекты.
+            </p>
+
+            <button class="small-btn"
+                    onclick="openModal('about')">
+                Подробнее →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="interests" class="section">
+
+    <div class="section-title">
+        <span>02</span>
+        <h2>Мои интересы</h2>
+    </div>
+
+    <p class="section-description">
+        Нажми на карточку, чтобы открыть слайд-шоу.
+    </p>
+
+    <div class="interest-grid">
+
+        <div class="interest-card"
+             onclick="openModal('english')">
+
+            <img src="images/english.jpg"
+                 alt="English">
+
+            <div class="card-overlay">
+                <span>01</span>
+                <h3>English</h3>
+                <p>Язык и новые знания</p>
+            </div>
+
+        </div>
+
+
+        <div class="interest-card"
+             onclick="openModal('programming')">
+
+            <img src="images/programming.jpg"
+                 alt="Programming">
+
+            <div class="card-overlay">
+                <span>02</span>
+                <h3>Programming</h3>
+                <p>Создание сайтов и проектов</p>
+            </div>
+
+        </div>
+
+
+        <div class="interest-card"
+             onclick="openModal('ai')">
+
+            <img src="images/ai.jpg"
+                 alt="AI">
+
+            <div class="card-overlay">
+                <span>03</span>
+                <h3>Artificial Intelligence</h3>
+                <p>Современные технологии</p>
+            </div>
+
+        </div>
+
+
+        <div class="interest-card"
+             onclick="openModal('books')">
+
+            <img src="images/book.jpg"
+                 alt="Books">
+
+            <div class="card-overlay">
+                <span>04</span>
+                <h3>Books</h3>
+                <p>Знания и интерес</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="projects" class="section">
+
+    <div class="section-title">
+        <span>03</span>
+        <h2>Мои проекты</h2>
+    </div>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <span>01</span>
+            <h3>Portfolio Website</h3>
+            <p>
+                Персональный сайт, который я создаю
+                как практику в программировании.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <span>02</span>
+            <h3>ИИ-помощник</h3>
+            <p>
+                Проект, связанный с искусственным
+                интеллектом.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <span>03</span>
+            <h3>Следующий проект</h3>
+            <p>
+                Новая идея, которую я хочу реализовать
+                в будущем.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="skills" class="section">
+
+    <div class="section-title">
+        <span>04</span>
+        <h2>Навыки</h2>
+    </div>
+
+    <div class="skills">
+
+        <div class="skill">
+
+            <div class="skill-top">
+                <span>English</span>
+                <span>B1</span>
+            </div>
+
+            <div class="skill-line">
+                <div style="width: 60%;"></div>
+            </div>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-top">
+                <span>HTML / CSS</span>
+                <span>Развиваю</span>
+            </div>
+
+            <div class="skill-line">
+                <div style="width: 65%;"></div>
+            </div>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-top">
+                <span>JavaScript</span>
+                <span>Изучаю</span>
+            </div>
+
+            <div class="skill-line">
+                <div style="width: 40%;"></div>
+            </div>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-top">
+                <span>AI</span>
+                <span>Интересуюсь</span>
+            </div>
+
+            <div class="skill-line">
+                <div style="width: 70%;"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+        <span>05</span>
+        <h2>Мнение ChatGPT</h2>
+    </div>
+
+    <div class="chatgpt-card">
+
+        <div class="chatgpt-icon">
+            🤖
+        </div>
+
+        <div>
+
+            <div class="chatgpt-label">
+                CHATGPT
+            </div>
+
+            <h3>
+                Уразбек Мейырхан
+            </h3>
+
+            <p>
+                Уразбек — человек, которому интересно
+                развиваться, получать новые знания
+                и пробовать разные направления.
+            </p>
+
+            <p>
+                Его интересы связаны с английским языком,
+                программированием, искусственным интеллектом
+                и книгами.
+            </p>
+
+            <p>
+                Он уже создал ИИ-помощника и два сайта,
+                продолжает изучать программирование
+                и интересуется новыми технологиями.
+            </p>
+
+            <div class="tags">
+                <span>English</span>
+                <span>Programming</span>
+                <span>AI</span>
+                <span>Books</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- КОНТАКТЫ -->
+
+<section id="contact" class="section contact">
+
+    <div class="section-title">
+        <span>06</span>
+        <h2>Контакты</h2>
+    </div>
+
+    <p class="contact-description">
+        Найти меня можно здесь.
+    </p>
+
+    <div class="contact-grid">
+
+        <a
+            href="https://www.tiktok.com/@meirkhaannn"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card"
+        >
+
+            <div class="contact-icon">
+                ♪
+            </div>
+
+            <div>
+                <span>TikTok</span>
+                <strong>@meirkhaannn</strong>
+            </div>
+
+        </a>
+
+
+        <a
+            href="https://www.instagram.com/meirkhaaannn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card"
+        >
+
+            <div class="contact-icon">
+                ◎
+            </div>
+
+            <div>
+                <span>Instagram</span>
+                <strong>@meirkhaaannn</strong>
+            </div>
+
+        </a>
+
+
+        <div class="contact-card no-link">
+
+            <div class="contact-icon">
+                ☎
+            </div>
+
+            <div>
+                <span>Телефон</span>
+                <strong>Секрет 🤫</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    <p>© 2026 Уразбек Мейырхан</p>
+</footer>
+
+
+<!-- МОДАЛЬНОЕ ОКНО -->
+
+<div class="modal" id="infoModal">
+
+    <div class="modal-content">
+
+        <button class="close"
+                onclick="closeModal()">
+            ×
+        </button>
+
+        <div class="modal-number"
+             id="slideNumber">
+            01 / 04
+        </div>
+
+        <div class="modal-icon"
+             id="modalIcon">
+            ✨
+        </div>
+
+        <h2 id="modalTitle">
+            Заголовок
+        </h2>
+
+        <p id="modalText">
+            Текст
+        </p>
+
+        <div class="modal-buttons">
+
+            <button onclick="previousSlide()">
+                ←
+            </button>
+
+            <div class="slide-dots"
+                 id="slideDots">
+            </div>
+
+            <button onclick="nextSlide()">
+                →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
